@@ -20,6 +20,8 @@ const desistir = document.getElementById("desistir");
 const novoJogo = document.getElementById("novoJogo");
 // ul:
 const ul = document.querySelector("ul");
+// text area:
+let novaPalavra = document.getElementById("entrada-texto");
 
 var paginaAtual = menuPrincipal;
 
@@ -285,6 +287,24 @@ function removerListeners(){
             verificaFimDeJogo();
         }
     })
+}
+
+// validando dados do textarea:
+novaPalavra.addEventListener("keypress", function(e){
+    if(!checkChar(e)){
+        e.preventDefault();
+    }
+});
+
+//função que valida o formulario:
+function checkChar(e) {
+    const char = String.fromCharCode(e.keyCode);
+    console.log(char);
+    const pattern = '[a-zA-Z]';
+
+    if(char.match(pattern)){
+        return true;
+    }
 }
 
 
