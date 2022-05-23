@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilo/reset.css">
+    <link rel="stylesheet" href="Estilo/style.css">
+    <link rel="shortcut icon" href="Imagens/forca.jfif" type="image/x-icon">
+    <script src="script.js" defer></script>
+    <script src="forca.js" defer></script>
+    <title>Jogo da Forca</title>
+</head>
+<body>
+
+    <!--Titulo com logo da Alura-->
+
+    <header>
+        <h1>
+            <a href="https://www.alura.com.br" class="logo" target="_blank"><img src="Imagens/Logo Alura.png" alt="Logo da Alura"></a>
+        </h1>  
+    </header>
+    <main>
+
+    <!--Menu principal-->
+
+        <section id="menu-principal" >
+            <div class="botoes">
+                <button id="iniciar">
+                    Começar a jogar
+                </button>
+                <button id="adicionarpalavra">
+                    Adicionar nova palavra
+                </button>
+            </div>                
+        </section>
+
+    <!--Seção para adicionar nova palavra-->
+
+        <section id="adicionar-palavra" class="invisivel">
+            <textarea name="entrada-texto" id="entrada-texto" placeholder="Digite uma palavra" maxlength="8"></textarea>
+            <p>
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/box-important--v1.png" class="icon1"/>Máx. de 8 letras
+            </p>
+            <div class="botoes-adicionar">
+                <button id="salvar">
+                    Salvar e começar
+                </button>
+                <button id="cancelar">
+                    cancelar
+                </button>
+            </div>                
+        </section>
+        <!--Tabuleiro-->
+        <section id="tabuleiro" class="invisivel">
+            <div class="quadro">
+                <canvas width="350" height="400"></canvas>
+            </div>
+            
+            <ul id="lista">
+             
+            </ul>
+            <div class="aviso invisivel" >
+                <p>Letra já utilizada, tente novamente!</p>
+            </div>
+            <div class="botoes-adicionar">
+                <button id="novoJogo">
+                    Novo jogo
+                </button>
+                <button id="desistir">
+                    Desistir
+                </button>
+            </div>
+            <div class="letrasErradas">
+                <h2>Letras Erradas:</h2>
+            </div>    
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; Desenvolvido por Jonathan Oliveira</p>
+        <div class="icones">
+            <a href="https://www.linkedin.com/in/jonathansoliveira77/" target="_blank">
+                <img src="https://img.icons8.com/color/48/000000/linkedin.png"/>
+            </a>            
+            <a href="https://www.instagram.com/jonatthan.o" target="_blank">
+                <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/>
+            </a>
+            <a href="https://github.com/jonathansoliveira" target="_blank">
+                <img src="https://img.icons8.com/material-sharp/48/000000/github.png"/>
+            </a>
+        </div>
+    </footer>   
+</body>
+</html>

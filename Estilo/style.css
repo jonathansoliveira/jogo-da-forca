@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Roboto:ital@1&display=swap');
+
+:root {
+    --cor0: #E5E5E5;
+    --cor1: #0A3871;
+    --cor2: #D8DFE8;
+    --cor3: #052041;
+    --fonte1: 'Roboto Mono', monospace;
+    --fonte2: 'Roboto', sans-serif;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cor0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: absolute;
+    left: 44px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: var(--fonte1);
+    color: var(--cor1);
+}
+
+main {
+    width: 100%;
+    height: 700px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;    
+}
+
+.botoes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+ }
+
+#iniciar {
+    Width:317px;
+    Height: 102px;
+    margin: 20px;
+    border-radius: 24px;
+    padding:24px;
+    gap:8px;
+    background-color: var(--cor1);
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: var(--fonte1);
+}
+
+#adicionarpalavra {
+    Width:317px;
+    Height: 102px;
+    border-radius: 24px;
+    margin: 20px;
+    padding:24px;
+    gap:8px;
+    background: var(--cor2);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--fonte1);
+    color: var(--cor1);
+}
+
+#iniciar:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+    background-color: var(--cor3);
+}
+
+#adicionarpalavra:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+    background-color: var(--cor3);
+    color: white;
+}
+
+#entrada-texto {
+    width: 100%;
+    height: 410px;
+    background-color: transparent;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 1.7em;
+    font-family: var(--fonte2);
+}
+
+#adicionar-palavra p {
+    font-family: var(--fonte2);
+    font-size: 1.5em;
+    color: var(--cor1);
+    margin: 10px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;    
+}
+
+#salvar, #novoJogo {
+    Width:317px;
+    Height: 67px;
+    margin: 20px;
+    border-radius: 24px;
+    padding:24px;
+    gap:8px;
+    background-color: var(--cor1);
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: var(--fonte1);
+    display: block;
+}
+
+#cancelar, #desistir {
+    Width:317px;
+    Height: 67px;
+    border-radius: 24px;
+    margin: 20px;
+    padding:24px;
+    gap:8px;
+    background: var(--cor2);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--fonte1);
+    color: var(--cor1);
+    display: block;
+}
+
+#salvar:hover, #novoJogo:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+    background-color: var(--cor3);
+}
+
+#cancelar:hover, #desistir:hover {
+    transition: all 0.5s;
+    transform: scale(1.1);
+    background-color: var(--cor3);
+    color: white;
+}
+
+#tabuleiro {
+    width: 1200px;
+    height: 800px;
+}
+
+#tabuleiro ul{
+    width: 800px;
+    margin: auto;
+    text-align: center;
+
+}
+
+#tabuleiro li{
+    width: 80px;
+    height: 50px;
+    color: #0A3871;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 40px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+canvas {
+    margin: auto;
+    align-items: center;
+}
+
+.botoes-adicionar {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    }
+
+footer p {
+    color: var(--cor1);
+    font-family: var(--fonte2);
+    font-size: 16px;
+}
+
+.invisivel {
+    display: none;
+}
+
+.icones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.invisivel {
+    display: none;
+}
+
+.aviso {
+    width: 300px;
+    height: 50px;
+    font-size: 1em;
+    color: white;
+    background-color: var(--cor3);
+    border: 1px solid var(--cor2);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+.quadro {
+    width: 400px;
+    margin: auto;
+}
+
+.letrasErradas {
+    width: 300px;
+    margin: auto;
+    font-size: 2em;
+    color: var(--cor1);
+}
+
+.letrasErradas > h2 {
+    font-weight: bold;
+    color: var(--cor1);
+    text-align: center;
+}
+
+@media screen and (max-width: 600px){
+
+body{
+    width: 100%;
+}
+
+#entrada-texto {
+    width: 343px;
+    height: 96px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.botoes-adicionar {
+    width: 340px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+#tabuleiro li{
+    width: 20px;
+    height: 50px;
+    margin-right: 20px;
+    font-size: 20px;
+    padding: 2px;
+}
+
+.letrasErradas {
+    width: 300px;
+    margin: auto;
+    font-size: 20px;
+    color: var(--cor1);
+}
+
+canvas{
+    height: 300px;
+}
+
+}
