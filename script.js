@@ -35,12 +35,12 @@ var fimDeJogo = false;
 
 // configurando evento ao clicar no botao "COMEÇAR A JOGAR":
 btnIniciarGame.addEventListener("click", function(){
+    document.querySelector(".texto").focus();
     reiniciaCanvas();
     sorteia();
     tornarInvisivel(paginaAtual);
     removerInvisivel(menuTabuleiro);
     desenhaTraco(palavra);
-    mostraTeclado();
     paginaAtual = menuTabuleiro;
     let letras = document.querySelectorAll("li");
     // configurando evento ao digitar letra:
@@ -74,6 +74,7 @@ btnAdiciona.addEventListener("click", function(){
     tornarInvisivel(paginaAtual);
     removerInvisivel(menuAdiciona)
     paginaAtual=menuAdiciona;
+    document.getElementById("entrada-texto").focus();
 })
 
 // configurando evento ao clicar no botao "CANCELAR":
@@ -85,6 +86,7 @@ btnCancelar.addEventListener("click",function(){
 
 // configurando evento ao clicar no botão "SALVAR E COMEÇAR":
 btnSalvarComecar.addEventListener("click", function(){
+    document.querySelector(".texto").focus();
     let novaPalavra = document.getElementById("entrada-texto");
     if(novaPalavra.value.length>0){
         
@@ -97,7 +99,6 @@ btnSalvarComecar.addEventListener("click", function(){
         tornarInvisivel(paginaAtual);
         removerInvisivel(menuTabuleiro);
         desenhaTraco(palavra);
-        mostraTeclado();
         paginaAtual = menuTabuleiro;
         let letras = document.querySelectorAll("li");
         // configurando evento ao digitar letra:
@@ -133,13 +134,13 @@ btnSalvarComecar.addEventListener("click", function(){
 
 // configurando evento ao clicar no botão Novo Jogo:
 novoJogo.addEventListener("click", function(){
+    document.querySelector(".texto").focus();
     reiniciaCanvas();
     letrasErradas=[];
     acertos=[];
     ul.innerHTML="";
     sorteia();
     desenhaTraco(palavra);
-    mostraTeclado();
     let letras = document.querySelectorAll("li");
     document.addEventListener("keydown", function(event,keyCode){
         let codigo = event.keyCode;
@@ -312,7 +313,4 @@ function checkChar(e) {
 }
 
 
-// da focus ao teclado:
-function mostraTeclado(){
-    document.querySelector(".texto").focus();
-}
+
