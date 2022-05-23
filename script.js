@@ -39,7 +39,8 @@ btnIniciarGame.addEventListener("click", function(){
     sorteia();
     tornarInvisivel(paginaAtual);
     removerInvisivel(menuTabuleiro);
-    desenhaTraco(palavra)
+    desenhaTraco(palavra);
+    mostraTeclado();
     paginaAtual = menuTabuleiro;
     let letras = document.querySelectorAll("li");
     // configurando evento ao digitar letra:
@@ -95,7 +96,8 @@ btnSalvarComecar.addEventListener("click", function(){
         sorteia();
         tornarInvisivel(paginaAtual);
         removerInvisivel(menuTabuleiro);
-        desenhaTraco(palavra)
+        desenhaTraco(palavra);
+        mostraTeclado();
         paginaAtual = menuTabuleiro;
         let letras = document.querySelectorAll("li");
         // configurando evento ao digitar letra:
@@ -137,6 +139,7 @@ novoJogo.addEventListener("click", function(){
     ul.innerHTML="";
     sorteia();
     desenhaTraco(palavra);
+    mostraTeclado();
     let letras = document.querySelectorAll("li");
     document.addEventListener("keydown", function(event,keyCode){
         let codigo = event.keyCode;
@@ -309,4 +312,7 @@ function checkChar(e) {
 }
 
 
-
+// da focus ao teclado:
+function mostraTeclado(){
+    document.querySelector(".texto").focus();
+}

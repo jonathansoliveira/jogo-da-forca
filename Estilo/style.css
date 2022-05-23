@@ -55,7 +55,7 @@ main {
     height: 700px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 10px;
@@ -282,9 +282,13 @@ footer p {
     text-align: center;
 }
 
-.nome {
-    background-color: none;
-    
+.texto{
+    height:0;
+    width:0;
+    visibility: hidden;
+    padding:0;
+    margin:0;
+    float:right;
 }
 
 @media screen and (max-width: 600px){
