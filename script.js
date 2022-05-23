@@ -22,6 +22,7 @@ const novoJogo = document.getElementById("novoJogo");
 const ul = document.querySelector("ul");
 // text area:
 let novaPalavra = document.getElementById("entrada-texto");
+document.querySelector(".texto").focus();
 
 var paginaAtual = menuPrincipal;
 

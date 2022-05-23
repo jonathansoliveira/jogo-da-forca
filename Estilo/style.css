@@ -282,6 +282,11 @@ footer p {
     text-align: center;
 }
 
+.nome {
+    background-color: none;
+    
+}
+
 @media screen and (max-width: 600px){
 
 body{
