@@ -22,7 +22,7 @@ const novoJogo = document.getElementById("novoJogo");
 const ul = document.querySelector("ul");
 // text area:
 let novaPalavra = document.getElementById("entrada-texto");
-document.querySelector(".texto").focus();
+
 
 var paginaAtual = menuPrincipal;
 
@@ -48,20 +48,8 @@ btnIniciarGame.addEventListener("click", function(){
         let codigo = event.keyCode;
         if(validaLetra(codigo)){
             let letra = event.key.toUpperCase();
-            if(letrasErradas.includes(letra)){
-                mostrarMensagemLetraUsada();
-            }else{
-                if(palavra.includes(letra)){
-                    letrasCorretas.push(letra);
-                } else {
-                    letrasErradas.push(letra);
-                    desenhaForca();
-                }
-                for(i=0;i<palavra.length;i++){
-                    if(letra==palavra[i]){
-                        letras[i].textContent = letra;
-                    }     
-                }    
+            if(!letrasErradas.includes(letra)){
+                verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas);   
             }
             mostrarLetrasErradas();
             verificaFimDeJogo();
@@ -106,21 +94,8 @@ btnSalvarComecar.addEventListener("click", function(){
             let codigo = event.keyCode;
             if(validaLetra(codigo)){
                 let letra = event.key.toUpperCase();
-                if(letrasErradas.includes(letra)){
-                    mostrarMensagemLetraUsada();
-                }else{
-                    if(palavra.includes(letra)){
-                        letrasCorretas.push(letra);
-                    } else {
-                        letrasErradas.push(letra);
-                        desenhaForca();
-                    }
-                
-                    for(i=0;i<palavra.length;i++){
-                        if(letra==palavra[i]){
-                            letras[i].textContent = letra;
-                        }     
-                    }
+                if(!letrasErradas.includes(letra)){
+                    verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas);   
                 }
                 mostrarLetrasErradas();
                 verificaFimDeJogo();                
@@ -146,22 +121,10 @@ novoJogo.addEventListener("click", function(){
         let codigo = event.keyCode;
         if(validaLetra(codigo)){
             let letra = event.key.toUpperCase();
-            if(letrasErradas.includes(letra)){
-                mostrarMensagemLetraUsada();
-            }else{
-                
-                if(palavra.includes(letra)){
- 
-                } else {
-                    letrasErradas.push(letra);
-                    desenhaForca();
-                }
-                for(i=0;i<palavra.length;i++){
-                    if(letra==palavra[i]){
-                        letras[i].textContent = letra;                       
-                    }     
-                }    
+            if(!letrasErradas.includes(letra)){              
+                verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas);      
             }
+            verificaFimDeJogo();
             mostrarLetrasErradas();
         }
     })
@@ -248,11 +211,14 @@ function mostrarLetrasErradas(){
 function verificaFimDeJogo(){
     let mensagem = "";
      if(palavra==ul.innerText){
+   
         mensagem="Parabens, você ganhou!";
         
     }
     if(mensagem){
-        alert(mensagem);
+        setTimeout(function(){
+            alert(mensagem);
+        },500)
     }
 
 }
@@ -266,27 +232,14 @@ function reiniciarJogo(){
 // remover listeners
 
 function removerListeners(){
-    document.EventListener("keydown", function(event,keyCode){
+    document.removeEventListener("keydown", function(event,keyCode){
         let codigo = event.keyCode;
         if(validaLetra(codigo)){
             let letra = event.key.toUpperCase();
             if(letrasErradas.includes(letra)){
                 mostrarMensagemLetraUsada();
             }else{
-                if(palavra.includes(letra)){
-                    letrasCorretas.push(letra);
-                } else {
-                    letrasErradas.push(letra);
-                    desenhaForca();
-                }
-                for(i=0;i<palavra.length;i++){
-                    if(letra==palavra[i]){
-                        letras[i].textContent = letra;
-                        var e = i;
-                        acertos.push(e);
-
-                    }     
-                }    
+                verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas);   
             }
             mostrarLetrasErradas();
             verificaFimDeJogo();
@@ -311,6 +264,22 @@ function checkChar(e) {
         return true;
     }
 }
+
+// criando função que verifica letra certa ou errada, e desenha no canvas caso errada
+function verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas){
+    if(palavra.includes(letra)){
+        letrasCorretas.push(letra);
+    } else {
+        letrasErradas.push(letra);
+        desenhaForca();
+    }
+    for(i=0;i<palavra.length;i++){
+        if(letra==palavra[i]){
+            letras[i].textContent = letra;
+        }     
+    }  
+}
+
 
 
 
