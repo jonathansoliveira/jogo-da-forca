@@ -301,6 +301,8 @@ body{
 
 .texto{
     width: 50px;
+    display: block;
+    opacity: 2;
 }
 
 #entrada-texto {
@@ -328,6 +330,16 @@ body{
     padding: 2px;
 }
 
+#tabuleiro{
+    width: 350px;
+    margin: auto;
+}
+
+ul#lista {
+    width: 320px;
+    margin: auto;
+}
+
 .letrasErradas {
     width: 300px;
     margin: auto;
@@ -335,7 +347,9 @@ body{
     color: var(--cor1);
 }
 
-
+footer{
+    width: 300px;
+}
 
 canvas{
     height: 300px;
