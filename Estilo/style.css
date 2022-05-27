@@ -258,8 +258,10 @@ footer p {
 .letrasErradas {
     width: 300px;
     margin: auto;
+    margin-top: 20px;
     font-size: 2em;
     color: var(--cor1);
+
 }
 
 .letrasErradas > h2 {
