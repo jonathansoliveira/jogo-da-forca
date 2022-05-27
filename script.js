@@ -1,5 +1,5 @@
 //palavras iniciais:
-palavras = ["HISTORIA", "CASCAVEL", "ORACULO", "VENCEDOR", "COLAR", "VISCOSE"];
+palavras = ["HISTORIA", "CASCAVEL", "ORACULO", "VENCEDOR", "COLAR", "VISCOSE","BABOSA", "MELANCIA", "CLUBE", "IGREJA", "BIBLIA", "HORTA"];
 //menu principal
 const menuPrincipal = document.getElementById("menu-principal");
 // botao começar a jogar:
@@ -23,6 +23,8 @@ const ul = document.querySelector("ul");
 // text area:
 let novaPalavra = document.getElementById("entrada-texto");
 
+const teclado = document.querySelectorAll(".btn-letras")
+
 
 var paginaAtual = menuPrincipal;
 
@@ -32,10 +34,33 @@ var letrasErradas = [];
 var letrasCorretas = [];
 var fimDeJogo = false;
 
+ // ATRIBUINDO FUNÇÃO AO TECLADO DA VERSÃO MOBILE:   
+for(z = 0; z < teclado.length; z++) {
+    teclado[z].addEventListener('click', function(){
+        let letras = document.querySelectorAll("li");
+        let letra = this.value;
+            if(!letrasErradas.includes(letra)){
+                if(palavra.includes(letra)){
+                    letrasCorretas.push(letra);
+                } else {
+                    letrasErradas.push(letra);
+                    desenhaForca();
+                }
+                for(i=0;i<palavra.length;i++){
+                    if(letra===palavra[i]){
+                        letras[i].textContent = letra;
+                    }     
+                }   
+            }
+            mostrarLetrasErradas();
+            verificaFimDeJogo();
+            
+    })
+}
+
 
 // configurando evento ao clicar no botao "COMEÇAR A JOGAR":
 btnIniciarGame.addEventListener("click", function(){
-    document.querySelector(".texto").focus();
     reiniciaCanvas();
     sorteia();
     tornarInvisivel(paginaAtual);
@@ -53,6 +78,7 @@ btnIniciarGame.addEventListener("click", function(){
             }
             mostrarLetrasErradas();
             verificaFimDeJogo();
+    
         }
     })
     })
@@ -74,7 +100,6 @@ btnCancelar.addEventListener("click",function(){
 
 // configurando evento ao clicar no botão "SALVAR E COMEÇAR":
 btnSalvarComecar.addEventListener("click", function(){
-    document.querySelector(".texto").focus();
     let novaPalavra = document.getElementById("entrada-texto");
     if(novaPalavra.value.length>0){
         
@@ -105,11 +130,11 @@ btnSalvarComecar.addEventListener("click", function(){
     } else {
         alert("Por favor digite uma palavra válida!")
     }
+    
 })
 
 // configurando evento ao clicar no botão Novo Jogo:
 novoJogo.addEventListener("click", function(){
-    document.querySelector(".texto").focus();
     reiniciaCanvas();
     letrasErradas=[];
     acertos=[];
@@ -128,7 +153,6 @@ novoJogo.addEventListener("click", function(){
             mostrarLetrasErradas();
         }
     })
-
 })
 
 // configurando evento ao clicar no botão desistir:
@@ -218,7 +242,8 @@ function verificaFimDeJogo(){
     if(mensagem){
         setTimeout(function(){
             alert(mensagem);
-        },500)
+        },500) 
+        
     }
 
 }
