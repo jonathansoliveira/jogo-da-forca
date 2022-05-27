@@ -329,7 +329,7 @@ main {
 }
 
 #entrada-texto {
-    width: 343px;
+    width: 340px;
     height: 96px;
     margin: auto;
     align-items: center;
@@ -411,8 +411,8 @@ canvas{
  border-radius: 7px;
  color: white;
  font-weight: bolder;
- width: 25px;
- height: 25px;
+ width: 20px;
+ height: 20px;
  text-align: center;
  }
 
@@ -429,7 +429,7 @@ canvas{
     font-family: var(--fonte2);
     text-align: center;
     width: 100%;
-    max-width: 340px;
+    max-width: 300px;
     margin: 60% auto;
     padding: 20px;
     background: var(--cor2);
