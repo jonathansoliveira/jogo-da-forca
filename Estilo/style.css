@@ -317,6 +317,11 @@ body{
     width: 360px;
 }
 
+main {
+    height: 580px;
+    margin: 20% auto;
+}
+
 .texto{
     width: 50px;
     display: block;
@@ -401,13 +406,13 @@ canvas{
 }
 
 .div-letras button {
- margin: 4px;
+ margin: 2px;
  background-color: var(--cor1);
  border-radius: 7px;
  color: white;
  font-weight: bolder;
- width: 30px;
- height: 30px;
+ width: 25px;
+ height: 25px;
  text-align: center;
  }
 
