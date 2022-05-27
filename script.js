@@ -22,6 +22,11 @@ const novoJogo = document.getElementById("novoJogo");
 const ul = document.querySelector("ul");
 // text area:
 let novaPalavra = document.getElementById("entrada-texto");
+//popup
+const popup = document.querySelector(".popup-wrapper");
+// mensagem fim de jogo:
+let mensagemFim = document.getElementById("mensagemFim");
+console.log(mensagemFim);
 
 const teclado = document.querySelectorAll(".btn-letras")
 
@@ -141,6 +146,7 @@ novoJogo.addEventListener("click", function(){
     ul.innerHTML="";
     sorteia();
     desenhaTraco(palavra);
+    tornarInvisivel(popup);
     let letras = document.querySelectorAll("li");
     document.addEventListener("keydown", function(event,keyCode){
         let codigo = event.keyCode;
@@ -160,8 +166,8 @@ desistir.addEventListener("click",function(){
     letrasErradas=[];
     acertos=[];
     ul.innerHTML="";
-    alert(`A palavra secreta era ${palavra}`)
     tornarInvisivel(paginaAtual);
+    tornarInvisivel(popup);
     removerInvisivel(menuPrincipal);
     paginaAtual=menuPrincipal;
 })
@@ -241,8 +247,10 @@ function verificaFimDeJogo(){
     }
     if(mensagem){
         setTimeout(function(){
-            alert(mensagem);
+            removerInvisivel(popup);
+            mensagemFim.textContent= mensagem;
         },500) 
+
         
     }
 

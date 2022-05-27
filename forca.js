@@ -65,8 +65,9 @@ function desenhaForca(){
         case 6:
             desenhaLinha(260,300,295,364);
             setTimeout(function(){
-                
-                alert(`Você perdeu, a palavra correta era ${palavra}`)
+
+                removerInvisivel(popup);
+                mensagemFim.textContent=`Você perdeu, a palavra correta era ${palavra}!`
             },500)
             
             break;
