@@ -314,7 +314,7 @@ footer p {
 @media screen and (max-width: 800px){
 
 body{
-    width: 100%;
+    width: 360px;
 }
 
 .texto{
@@ -332,7 +332,7 @@ body{
 }
 
 .botoes-adicionar {
-    width: 340px;
+    width: 300px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -383,18 +383,21 @@ canvas{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: auto;
 }
 
 .tecladoL2{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: auto;
 }
 
 .tecladoL3{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: auto;
 }
 
 .div-letras button {
@@ -403,6 +406,9 @@ canvas{
  border-radius: 7px;
  color: white;
  font-weight: bolder;
+ width: 30px;
+ height: 30px;
+ text-align: center;
  }
 
  .popup-wrapper {
@@ -418,8 +424,8 @@ canvas{
     font-family: var(--fonte2);
     text-align: center;
     width: 100%;
-    max-width: 300px;
-    margin: auto;
+    max-width: 340px;
+    margin: 60% auto;
     padding: 20px;
     background: var(--cor2);
     position: relative;
