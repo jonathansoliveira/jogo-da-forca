@@ -319,9 +319,13 @@ body{
 
 main {
     height: 580px;
+    width: 100%;
     margin: 20% auto;
 }
 
+.footer{
+    width: 100%;
+}
 .texto{
     width: 50px;
     display: block;
@@ -354,7 +358,7 @@ main {
 }
 
 #tabuleiro{
-    width: 350px;
+    width: 100%;
     margin: auto;
 }
 
@@ -439,6 +443,14 @@ canvas{
     font-weight: bold;
     font-size: 2em;
     color: var(--cor3);
+}
+
+#adicionar-palavra {
+    width: 100%;
+}
+
+#menu-principal {
+    width: 100%;
 }
 
 }
