@@ -418,8 +418,8 @@ canvas{
     font-family: var(--fonte2);
     text-align: center;
     width: 100%;
-    max-width: 350px;
-    margin: 10% auto;
+    max-width: 300px;
+    margin: auto;
     padding: 20px;
     background: var(--cor2);
     position: relative;
