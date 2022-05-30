@@ -242,7 +242,7 @@ function verificaFimDeJogo(){
     let mensagem = "";
      if(palavra==ul.innerText){
    
-        mensagem="Parabens, você ganhou!";
+        mensagem="Parabéns, você ganhou!";
         
     }
     if(mensagem){
