@@ -310,6 +310,7 @@ footer p {
 }
 
 @media screen and (max-width: 1024px){
+
     .div-letras{
         display: flex;
         flex-direction: column;
