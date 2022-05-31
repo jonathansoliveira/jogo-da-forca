@@ -8,7 +8,10 @@ pincel.lineTo(100-tela.offsetLeft,350-tela.offsetTop);
 pincel.lineTo(275-tela.offsetLeft,350-tela.offsetTop);
 pincel.fill();*/
 
-pincel.strokeStyle = "darkblue";
+pincel.strokeStyle = "#0A3871";
+pincel.lineWidth = 6;
+pincel.lineCap = "round";
+pincel.lineJoin = "round";
 //passo1
 desenhaLinha(10,400,310,400);
 //passo2
