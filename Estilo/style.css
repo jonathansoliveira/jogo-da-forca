@@ -189,6 +189,7 @@ main {
     width: 800px;
     margin: auto;
     text-align: center;
+    font-weight: bolder;
 
 }
 
@@ -260,6 +261,7 @@ footer p {
     margin: auto;
     margin-top: 20px;
     font-size: 2em;
+    font-weight: bolder;
     color: var(--cor1);
 
 }
