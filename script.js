@@ -216,16 +216,6 @@ function validaLetra(codigo){
     return codigo>=65 && codigo<=90;
 }
 
-// função que mostra aviso de letra repetida:
-
-function mostrarMensagemLetraUsada(){
-    let aviso = document.querySelector(".aviso");
-    aviso.classList.remove("invisivel");
-    setTimeout(function(){
-        aviso.classList.add("invisivel");
-    },1000);
-}
-
 // criando função que mostra letras erradas:
 
 function mostrarLetrasErradas(){
@@ -259,25 +249,6 @@ function verificaFimDeJogo(){
 // reiniciar jogo:
 function reiniciarJogo(){
     window.location.reload();
-}
-
-
-// remover listeners
-
-function removerListeners(){
-    document.removeEventListener("keydown", function(event,keyCode){
-        let codigo = event.keyCode;
-        if(validaLetra(codigo)){
-            let letra = event.key.toUpperCase();
-            if(letrasErradas.includes(letra)){
-                mostrarMensagemLetraUsada();
-            }else{
-                verificaLetraCorretaErrada(letra,palavra,letras,letrasCorretas,letrasErradas);   
-            }
-            mostrarLetrasErradas();
-            verificaFimDeJogo();
-        }
-    })
 }
 
 // validando dados do textarea:
