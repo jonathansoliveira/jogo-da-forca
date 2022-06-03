@@ -1,5 +1,5 @@
 <h1 align="center"> JOGO DA FORCA </h1>
-<p>GitHub-pages: https://jonathansoliveira.github.io/Jogo-da-Forca/</p>
+<p>GitHub-pages: https://jonathansoliveira.github.io/jogo-da-forca/</p>
 <br>
 <p>O programa trata de um jogo da forca, onde é sorteado automaticamente uma palavra, e ao ser digitado uma letra pelo usuario, o programa verifica se a letra digitada faz parte da palavra sorteada, caso faça parte o programa mostra na tela a letra, caso contrario começa a desenhar a forca.</p>
 
